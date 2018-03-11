@@ -27,4 +27,4 @@ var EDIT_TYPE;
     EDIT_TYPE[EDIT_TYPE["replace"] = 0] = "replace";
     EDIT_TYPE[EDIT_TYPE["insert"] = 1] = "insert";
 })(EDIT_TYPE = exports.EDIT_TYPE || (exports.EDIT_TYPE = {}));
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=stringBatchReplace.js.map

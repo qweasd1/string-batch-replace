@@ -1,7 +1,7 @@
-import {strintBatchReplace, EDIT_TYPE} from "../lib";
+import {stringBatchReplace, EDIT_TYPE} from "../lib";
 
 it('test replace', function () {
-  let newText = strintBatchReplace("abc",[
+  let newText = stringBatchReplace("abc",[
     {
       type:EDIT_TYPE.replace,
       start:1,
@@ -12,7 +12,7 @@ it('test replace', function () {
 });
 
 it('test insert', function () {
-  let newText = strintBatchReplace("abc",[
+  let newText = stringBatchReplace("abc",[
     {
       type:EDIT_TYPE.insert,
       start:1,
@@ -23,7 +23,7 @@ it('test insert', function () {
 
 
 it('test together', function () {
-  let newText = strintBatchReplace("abc",[
+  let newText = stringBatchReplace("abc",[
     {
       type:EDIT_TYPE.insert,
       start:1,
@@ -40,7 +40,7 @@ it('test together', function () {
 });
 
 it('test reorder together', function () {
-  let newText = strintBatchReplace("abc",[
+  let newText = stringBatchReplace("abc",[
     {
       type:EDIT_TYPE.replace,
       start:2,
