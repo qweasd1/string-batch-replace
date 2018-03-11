@@ -1,4 +1,4 @@
-export declare function strintBatchReplace(originText: string, editInfos: EditInfo[]): string;
+export declare function stringBatchReplace(originText: string, editInfos: EditInfo[]): string;
 export interface EditInfo {
     type: EDIT_TYPE;
     text: string;
