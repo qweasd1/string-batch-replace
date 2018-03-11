@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "es5",
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "emitDecoratorMetadata":true,
+    "types": ["node","es6-collections","jest"],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}
