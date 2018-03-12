@@ -1,1 +1,1 @@
-export { stringBatchReplace, EDIT_TYPE } from './lib/stringBatchReplace';
+export * from './lib/stringBatchReplace';
