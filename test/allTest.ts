@@ -21,6 +21,16 @@ it('test insert', function () {
   expect(newText).toEqual("axbc")
 });
 
+it('test delete', function () {
+  let newText = stringBatchReplace("abc",[
+    {
+      type:EDIT_TYPE.delete,
+      start:1,
+      end:2
+    }])
+  expect(newText).toEqual("ac")
+});
+
 
 it('test together', function () {
   let newText = stringBatchReplace("abc",[
@@ -30,13 +40,18 @@ it('test together', function () {
       text:"x"
     },
     {
+      type:EDIT_TYPE.delete,
+      start:1,
+      end:2
+    },
+    {
       type:EDIT_TYPE.replace,
       start:2,
       end:3,
       text:"yy"
     }
     ])
-  expect(newText).toEqual("axbyy")
+  expect(newText).toEqual("axyy")
 });
 
 it('test reorder together', function () {
@@ -51,9 +66,14 @@ it('test reorder together', function () {
       type:EDIT_TYPE.insert,
       start:1,
       text:"x"
+    },
+    {
+      type:EDIT_TYPE.delete,
+      start:1,
+      end:2
     }
   ])
-  expect(newText).toEqual("axbyy")
+  expect(newText).toEqual("axyy")
 });
 
 

@@ -6,12 +6,17 @@ export function stringBatchReplace(originText:string, editInfos:EditInfo[]){
   let cursor = 0
   for(let edit of editInfos){
     newTextCache.push(originText.substring(cursor,edit.start))
-    newTextCache.push(edit.text)
+
     switch (edit.type){
       case EDIT_TYPE.insert:
+        newTextCache.push(edit.text)
         cursor = edit.start
         break
       case EDIT_TYPE.replace:
+        newTextCache.push(edit.text)
+        cursor = edit.end
+        break
+      case EDIT_TYPE.delete:
         cursor = edit.end
         break
     }
@@ -25,14 +30,15 @@ export function stringBatchReplace(originText:string, editInfos:EditInfo[]){
 
 export interface EditInfo {
   type:EDIT_TYPE
-  text:string
+  text?:string
   start:number
   end?:number
 }
 
 export enum EDIT_TYPE{
   replace = 0,
-  insert = 1
+  insert = 1,
+  delete = 2
 }
 
 
