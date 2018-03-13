@@ -1,6 +1,6 @@
 {
-  "name": "string-batch-replace",
-  "version": "0.0.3",
+  "name": "string-batch-update",
+  "version": "0.0.4",
   "dependencies": {
   },
   "main": "dist/index.js",

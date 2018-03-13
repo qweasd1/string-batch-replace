@@ -1,4 +1,4 @@
-import {stringBatchReplace, EDIT_TYPE} from "../lib";
+import {stringBatchReplace, EDIT_TYPE} from "../lib/stringBatchUpdate";
 
 it('test replace', function () {
   let newText = stringBatchReplace("abc",[
