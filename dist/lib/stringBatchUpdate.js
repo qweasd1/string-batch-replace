@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var editInfoSorter = function (x, y) { return x.start - y.start; };
-function stringBatchReplace(originText, editInfos) {
+function stringBatchUpdate(originText, editInfos) {
     editInfos = editInfos.sort(editInfoSorter);
     var newTextCache = [];
     var cursor = 0;
@@ -25,7 +25,7 @@ function stringBatchReplace(originText, editInfos) {
     newTextCache.push(originText.substr(cursor));
     return newTextCache.join("");
 }
-exports.stringBatchReplace = stringBatchReplace;
+exports.stringBatchUpdate = stringBatchUpdate;
 var EDIT_TYPE;
 (function (EDIT_TYPE) {
     EDIT_TYPE[EDIT_TYPE["replace"] = 0] = "replace";

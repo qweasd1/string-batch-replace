@@ -1,5 +1,5 @@
 const editInfoSorter = (x,y)=>x.start - y.start
-export function stringBatchReplace(originText:string, editInfos:EditInfo[]){
+export function stringBatchUpdate(originText:string, editInfos:EditInfo[]){
   editInfos = editInfos.sort(editInfoSorter)
 
   let newTextCache = []

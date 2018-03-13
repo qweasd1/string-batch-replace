@@ -1,1 +1,1 @@
-export * from './lib/stringBatchReplace'
+export * from './lib/stringBatchUpdate'

@@ -1,7 +1,7 @@
-import {stringBatchReplace, EDIT_TYPE} from "../lib/stringBatchUpdate";
+import {stringBatchUpdate, EDIT_TYPE} from "../lib/stringBatchUpdate";
 
 it('test replace', function () {
-  let newText = stringBatchReplace("abc",[
+  let newText = stringBatchUpdate("abc",[
     {
       type:EDIT_TYPE.replace,
       start:1,
@@ -12,7 +12,7 @@ it('test replace', function () {
 });
 
 it('test insert', function () {
-  let newText = stringBatchReplace("abc",[
+  let newText = stringBatchUpdate("abc",[
     {
       type:EDIT_TYPE.insert,
       start:1,
@@ -22,7 +22,7 @@ it('test insert', function () {
 });
 
 it('test delete', function () {
-  let newText = stringBatchReplace("abc",[
+  let newText = stringBatchUpdate("abc",[
     {
       type:EDIT_TYPE.delete,
       start:1,
@@ -33,7 +33,7 @@ it('test delete', function () {
 
 
 it('test together', function () {
-  let newText = stringBatchReplace("abc",[
+  let newText = stringBatchUpdate("abc",[
     {
       type:EDIT_TYPE.insert,
       start:1,
@@ -55,7 +55,7 @@ it('test together', function () {
 });
 
 it('test reorder together', function () {
-  let newText = stringBatchReplace("abc",[
+  let newText = stringBatchUpdate("abc",[
     {
       type:EDIT_TYPE.replace,
       start:2,
