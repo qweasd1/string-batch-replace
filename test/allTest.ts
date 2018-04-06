@@ -31,6 +31,21 @@ it('test delete', function () {
   expect(newText).toEqual("ac")
 });
 
+it('test delete (delete is longer than next insert)', function () {
+  let newText = stringBatchUpdate("import 'a'\n",[
+    {
+      type:EDIT_TYPE.delete,
+      start:0,
+      end:12
+    },
+    {
+      type:EDIT_TYPE.insert,
+      start:11,
+      text:"import 'b'"
+    }
+  ])
+  expect(newText).toEqual("import 'b'")
+});
 
 it('test together', function () {
   let newText = stringBatchUpdate("abc",[
@@ -53,6 +68,8 @@ it('test together', function () {
     ])
   expect(newText).toEqual("axyy")
 });
+
+
 
 it('test reorder together', function () {
   let newText = stringBatchUpdate("abc",[

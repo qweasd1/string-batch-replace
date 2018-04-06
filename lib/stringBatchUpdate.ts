@@ -5,7 +5,9 @@ export function stringBatchUpdate(originText:string, editInfos:EditInfo[]){
   let newTextCache = []
   let cursor = 0
   for(let edit of editInfos){
-    newTextCache.push(originText.substring(cursor,edit.start))
+    if(cursor < edit.start){
+      newTextCache.push(originText.substring(cursor,edit.start))
+    }
 
     switch (edit.type){
       case EDIT_TYPE.insert:

@@ -7,7 +7,9 @@ function stringBatchUpdate(originText, editInfos) {
     var cursor = 0;
     for (var _i = 0, editInfos_1 = editInfos; _i < editInfos_1.length; _i++) {
         var edit = editInfos_1[_i];
-        newTextCache.push(originText.substring(cursor, edit.start));
+        if (cursor < edit.start) {
+            newTextCache.push(originText.substring(cursor, edit.start));
+        }
         switch (edit.type) {
             case EDIT_TYPE.insert:
                 newTextCache.push(edit.text);
